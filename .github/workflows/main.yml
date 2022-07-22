@@ -1,0 +1,17 @@
+name: Deploy-Flask-App
+
+on: 
+  push:
+    branches: 
+      - master
+      
+jobs:
+  OS_prepairing:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: OS_update
+      run: sudo apt update
+      
+    - name: Install phyton
+    
