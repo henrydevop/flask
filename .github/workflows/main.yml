@@ -10,8 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: OS_update
-      run: sudo apt update
+    - name: Clone project
+      uses: actions/checkout@v1
       
-    - name: Install phyton
+    - name: List 
+      run: ls -la
+      
     
