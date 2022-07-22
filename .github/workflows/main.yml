@@ -13,6 +13,5 @@ jobs:
     - name: Clone project
       uses: actions/checkout@v1
       
-    - name: List 
-      run: ls -la
+    - name: 
       
