@@ -25,7 +25,8 @@ jobs:
       
     - name: Connect test
       run: |
-        ssh ${{ secrets.AWS_SSH_USER }}@${{ secrets.AWS_SSH_HOST }} && ls -la
+        ssh ${{ secrets.AWS_SSH_USER }}@${{ secrets.AWS_SSH_HOST }}
+        ls -la
       
 #    - name: Copying data to the remote server
 #      run: 
