@@ -28,5 +28,5 @@ jobs:
     - name: Copying data
       uses: actions/checkout@v1
       with:
-        path: '~/flask_project/'
+        path: '/home/ubuntu/flask_project/'
         
