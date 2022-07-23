@@ -6,27 +6,27 @@ on:
       - main
       
 jobs:
-#  Install_Docker:
-#    runs-on: self-hosted
+  Install_Docker:
+    runs-on: self-hosted
     
-#    steps:
+    steps:
     
-#    - name: Install Docker
-#     uses: docker-practice/actions-setup-docker@master
+    - name: Install Docker
+      uses: docker-practice/actions-setup-docker@master
       
   Copying_App_Data:
     runs-on: self-hosted
     
     steps:
     
-#    - name: Make a volume directory
-#      run: 
-#        cd /
-#        sudo mkdir flask_project
-#         sudo chown ubuntu:ubuntu flask_project/
+    - name: Make a volume directory
+      run: 
+        cd /
+        sudo mkdir flask_project
+        sudo chown ubuntu:ubuntu flask_project/
         
     - name: Copying data
       uses: actions/checkout@v1
-      
-    - name: Move data
-      run: mv * /flask_project
+      with:
+        path: '/flask_project/'
+        
