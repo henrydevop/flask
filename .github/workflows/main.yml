@@ -20,9 +20,10 @@ jobs:
     steps:
     
     - name: Make a volume directory
-      run: |
-        cd /
-        sudo mkdir flask_project
+      run: 
+#        cd /
+#        sudo mkdir flask_project
+        cd /flask_project
         
     - name: Copying data
       uses: actions/checkout@v1
