@@ -12,5 +12,7 @@ jobs:
     steps:
     
     - name: Connection test
-      run: sudo apt update
+      run: |
+        sudo apt update -y
+        sudo apt upgrade -y
       
