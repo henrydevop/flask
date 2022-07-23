@@ -20,7 +20,7 @@ jobs:
     steps:
     
     - name: Make a volume directory
-      run: 
+      run: |
         cd /
         sudo mkdir flask_project
         sudo chown ubuntu:ubuntu flask_project/
