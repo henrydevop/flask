@@ -6,13 +6,13 @@ on:
       - main
       
 jobs:
-  Install_Docker:
-    runs-on: self-hosted
+#  Install_Docker:
+#    runs-on: self-hosted
     
-    steps:
+#    steps:
     
-    - name: Install Docker
-      uses: docker-practice/actions-setup-docker@master
+#    - name: Install Docker
+#     uses: docker-practice/actions-setup-docker@master
       
   Copying_App_Data:
     runs-on: self-hosted
@@ -27,3 +27,6 @@ jobs:
         
     - name: Copying data
       uses: actions/checkout@v1
+      
+    - name: Check data
+      run: ls -la
