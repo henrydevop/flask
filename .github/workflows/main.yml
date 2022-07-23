@@ -7,12 +7,21 @@ on:
       
 jobs:
   Install_Docker:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     
     steps:
     
     - name: Install Docker
       uses: docker-practice/actions-setup-docker@master
       
-    - name: Docker check
-      run: Docker version
+  Copying_App_Data:
+    runs-on: self-hosted
+    
+    steps:
+    
+    - run: |
+        cd /
+        mkdir flask_project
+        cd flask_project
+        touch 1.txt
+        ls -la
