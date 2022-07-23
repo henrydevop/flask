@@ -15,4 +15,4 @@ jobs:
       uses: docker-practice/actions-setup-docker@master
       
     - name: Docker check
-      run: Docker --version
+      run: Docker version
