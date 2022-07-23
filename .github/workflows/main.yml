@@ -21,7 +21,7 @@ jobs:
     
     - run: |
         cd /
-        mkdir flask_project
+        sudo mkdir flask_project
         cd flask_project
         touch 1.txt
         ls -la
