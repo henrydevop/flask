@@ -24,13 +24,8 @@ jobs:
     
     - name: Make a volume directory
       run: | 
-        cd ${{ env.USER_HOME_DIR }}
-        ls -l
-        [ ! -d "${{ env.PROD_DIRECTORY }}"] && echo "AAAAAAAAAAAAAAAAAAAAAAAAA"
-#        then
-#          mkdir "${{ env.PROD_DIRECTORY }}"
-           
-        
+        cd ${{ USER_HOME_DIR }}
+        mkdir ${{ PROD_DIRECTORY }}
         
     - name: Clone data
       uses: actions/checkout@v1
