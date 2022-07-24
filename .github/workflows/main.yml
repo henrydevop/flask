@@ -27,7 +27,7 @@ jobs:
         cd ${{ env.USER_HOME_DIR }}
         ls -l
         [ ! -d "${{ env.PROD_DIRECTORY }}"] && echo "AAAAAAAAAAAAAAAAAAAAAAAAA"
-        then
+#        then
 #          mkdir "${{ env.PROD_DIRECTORY }}"
            
         
