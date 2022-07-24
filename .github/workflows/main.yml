@@ -32,3 +32,4 @@ jobs:
     
     - name: Copying data
       run: cp * ${{ env.USER_HOME_DIR }}/${{ env.PROD_DIRECTORY }}/
+
