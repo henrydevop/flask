@@ -1,4 +1,6 @@
 name: Deploy-Flask-App
+env: 
+  PROD_DIRECTORY : flask_project
 
 on: 
   push:
@@ -6,13 +8,13 @@ on:
       - main
       
 jobs:
-#  Install_Docker:
-#    runs-on: self-hosted
-#    
-#    steps:
+  Install_Docker:
+    runs-on: self-hosted
     
-#    - name: Install Docker
-#      uses: docker-practice/actions-setup-docker@master
+    steps:
+    
+    - name: Install Docker
+      uses: docker-practice/actions-setup-docker@master
       
   Copying_App_Data:
     runs-on: self-hosted
