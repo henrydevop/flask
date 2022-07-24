@@ -21,12 +21,12 @@ jobs:
     
     - name: Make a volume directory
       run: |
-        cd ~
+        cd /home/ubuntu
         sudo mkdir flask_project
         sudo chown ubuntu:ubuntu flask_project/
         
     - name: Copying data
       uses: actions/checkout@v1
       with:
-        path: '/home/ubuntu/flask_project/'
+        path: 'flask_project'
         
