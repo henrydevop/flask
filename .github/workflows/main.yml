@@ -26,10 +26,11 @@ jobs:
       run: | 
         cd ${{ env.USER_HOME_DIR }}
         ls -l
-        if [ ! -d "${{ env.PROD_DIRECTORY }}"]
+        [ ! -d "${{ env.PROD_DIRECTORY }}"] && echo "AAAAAAAAAAAAAAAAAAAAAAAAA"
         then
-          mkdir "${{ env.PROD_DIRECTORY }}"
-        fi
+#          mkdir "${{ env.PROD_DIRECTORY }}"
+           
+        
         
     - name: Clone data
       uses: actions/checkout@v1
