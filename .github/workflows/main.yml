@@ -28,7 +28,7 @@ jobs:
         ls -l
         if [ ! -d "${{ env.PROD_DIRECTORY }}"]
         then
-          mkdir ${{ env.PROD_DIRECTORY }}
+          mkdir "${{ env.PROD_DIRECTORY }}"
         fi
         
     - name: Clone data
