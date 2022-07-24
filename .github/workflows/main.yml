@@ -35,4 +35,4 @@ jobs:
       uses: actions/checkout@v1
     
     - name: Copying data
-      run: cp * ${{ env.USER_HOME_DIR }}/${{ env.PROD_DIRECTORY }}
+      run: cp * ${{ env.USER_HOME_DIR }}/${{ env.PROD_DIRECTORY }}/
