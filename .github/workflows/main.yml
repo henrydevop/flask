@@ -27,8 +27,7 @@ jobs:
         cd ${{ env.USER_HOME_DIR }}
         if [ ! -d "${{ env.PROD_DIRECTORY }}"]
         then
-          sudo mkdir ${{ env.PROD_DIRECTORY }}
-          sudo chown ubuntu:ubuntu ${{ env.PROD_DIRECTORY }}
+          mkdir ${{ env.PROD_DIRECTORY }}
         fi
         
     - name: Clone data
