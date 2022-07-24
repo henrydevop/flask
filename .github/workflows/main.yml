@@ -25,6 +25,7 @@ jobs:
     - name: Make a volume directory
       run: |
         cd ${{ env.USER_HOME_DIR }}
+        ls -l
         if [ ! -d "${{ env.PROD_DIRECTORY }}"]
         then
           mkdir ${{ env.PROD_DIRECTORY }}
