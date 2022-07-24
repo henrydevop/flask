@@ -24,8 +24,8 @@ jobs:
     
     - name: Make a volume directory
       run: |
-        if [ ! -d ${{ env.USER_HOME_DIR }}/${{ env.PROD_DIRECTORY }}]; then
-          cd ${{ env.USER_HOME_DIR }}
+        cd ${{ env.USER_HOME_DIR }}
+        if [ ! -d ${{ env.PROD_DIRECTORY }}]; then
           sudo mkdir ${{ env.PROD_DIRECTORY }}
           sudo chown ubuntu:ubuntu ${{ env.PROD_DIRECTORY }}
         fi
