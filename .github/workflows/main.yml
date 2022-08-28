@@ -19,9 +19,10 @@ jobs:
     
       - name: Make a project directory
         run: |
-          mkdir ${{ env.PROJECT_NAME }}
-          cd ${{ env.PROJECT_NAME }}
-          ls -la    
+          sudo mkdir ${{ env.PROJECT_NAME }}
+          sudo cd ${{ env.PROJECT_NAME }}
+          sudo ls -la    
+          
       - uses: docker-practice/actions-setup-docker@master
 
       - uses: actions/checkout@v3
