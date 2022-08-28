@@ -33,7 +33,7 @@ jobs:
           output_file: ${{ env.PROJECT_NAME }}/flask_env.py
           strict: true
           variables: |
-            ${{ env.ADMIN_USER }}
-            ${{ env.ADMIN_PASSWORD }}
+            ADMIN_USER=admin
+            ADMIN_PASSWORD=pass
              
       - run: cat ${{ env.PROJECT_NAME }}/flask_env.py
