@@ -30,10 +30,12 @@ jobs:
       - uses: cuchi/jinja2-action@v1.2.0
         with:
           template: flask_env.py
-          output_file: ${{ env.PROJECT_NAME }}/flask_env.py
+          output_file: flask_env.py
           strict: true
           variables: |
             ADMIN_USER=admin
             ADMIN_PASSWORD=pass
              
-      - run: cat ${{ env.PROJECT_NAME }}/flask_env.py
+      - run: |
+          sudo mv flask_env.py ${{ env.PROJECT_NAME }}/flask_env.py
+          cat ${{ env.PROJECT_NAME }}/flask_env.py
