@@ -9,12 +9,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    
+      - uses: docker-practice/actions-setup-docker@master
+
       - uses: actions/checkout@v3
       
-      - uses: docker-practice/actions-setup-docker@master
-      - run: |
-          set -x
-  
-          docker version
-
-          docker run --rm hello-world
+      - uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: flask_env.py
+          output_file: flask_env.py_1
+          strict: true
+          variables: |
+            ADMIN_USER=junior
+            
+      - run: cat flask_env.py_1  
