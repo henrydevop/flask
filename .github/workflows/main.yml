@@ -21,5 +21,6 @@ jobs:
           strict: true
           variables: |
             ADMIN_USER=junior
+            ADMIN_PASSWORD=pass
             
       - run: cat flask_env.py_1  
