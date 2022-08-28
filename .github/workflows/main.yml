@@ -20,7 +20,7 @@ jobs:
       - name: Make a project directory
         run: |
           sudo mkdir ${{ env.PROJECT_NAME }}
-          sudo cd ${{ env.PROJECT_NAME }}
+          cd ${{ env.PROJECT_NAME }}
           sudo ls -la    
           
       - uses: docker-practice/actions-setup-docker@master
