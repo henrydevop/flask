@@ -7,22 +7,13 @@ on:
 env:
   PROJECT_NAME: /home/flask_app
   ENV_NAME: flask
-  ADMIN_USER: admin
-  ADMIN_PASSWORD: pass
-  FLASK_PORT: 5000
   
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    
-      - name: Make a project directory
-        run: |
-          sudo mkdir ${{ env.PROJECT_NAME }}
-          cd ${{ env.PROJECT_NAME }}
-          sudo ls -la    
-          
+
       - uses: docker-practice/actions-setup-docker@master
 
       - uses: actions/checkout@v3
@@ -35,7 +26,17 @@ jobs:
           variables: |
             ADMIN_USER=admin
             ADMIN_PASSWORD=pass
+            
+      - uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: main.py
+          output_file: main.py
+          strict: true
+          variables: |
+            ADMIN_USER=admin
+            ADMIN_PASSWORD=pass
              
       - run: |
-          sudo mv flask_env.py ${{ env.PROJECT_NAME }}/flask_env.py
-          cat ${{ env.PROJECT_NAME }}/flask_env.py
+          sudo mkdir ${{ env.PROJECT_NAME }}
+          sudo cp main.py flask_env.py requirements.txt ${{ env.PROJECT_NAME }}
+          sudo ls -la ${{ env.PROJECT_NAME }}
