@@ -1,0 +1,13 @@
+---
+# tasks file for install_jenkins_in_docker
+- name: Pull Jenkins image
+  docker_image:
+    name: jenkins/jenkins
+    source: pull
+
+- name: Run Jenkins in a Docker container
+  docker_container:
+    name: jenkins
+    image: jenkins/jenkins
+    state: started
+    published_ports: 8080:8080

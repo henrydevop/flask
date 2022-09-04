@@ -1,2 +1,8 @@
 ---
-- name: Deploy 
+- name: Deploy flask app
+  hosts: all
+  become: yes
+
+  roles:
+    - role: install_docker
+    - role: install_jenkins_in_docker
