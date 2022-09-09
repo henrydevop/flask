@@ -6,7 +6,7 @@ from flask import Flask, request
 
 # create the Flask app
 app = Flask(__name__)
-variable = subprocess.check_output('uname -a')
+variable = subprocess.check_output('uname', '-a')
 
 def check_user_login_and_password(login, password):
     """
@@ -35,7 +35,7 @@ def auth_form():
         if user_status == '[Failed_Login]' or user_status == '[Failed_Password]' or user_status == '[Some_problem]':
                 return user_status
         else:
-                return '{UNAME:{}}'.format(str(variable))
+                return 'UNAME:{}'.format(str(variable))
     else:
         return '<html><body> <form method=post >login:<input type=text name=user /><br/> password:<input type=password name=pasw /> <br /> <input type=submit /> </form> </body></html>'
 
