@@ -6,7 +6,7 @@ from flask import Flask, request
 
 # create the Flask app
 app = Flask(__name__)
-variable = subprocess.check_output('uname', '-a')
+variable = subprocess.check_output('uname -a', shell=True)
 
 def check_user_login_and_password(login, password):
     """
