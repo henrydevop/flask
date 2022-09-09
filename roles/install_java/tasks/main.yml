@@ -1,2 +1,7 @@
 ---
 # tasks file for install_java
+- name: Openjdk-11-jdk install
+  apt:
+    name: openjdk-11-jdk
+    update_cache: yes
+    state: latest

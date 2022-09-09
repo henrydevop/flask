@@ -11,3 +11,4 @@
   become: yes
   roles:
     - role: install_docker
+    - role: install_java
