@@ -1,8 +1,13 @@
 ---
-- name: Deploy flask app
-  hosts: all
+- name: Install Docker and Jenkins to the Master node
+  hosts: MASTER
   become: yes
-
   roles:
     - role: install_docker
     - role: install_jenkins_in_docker
+
+- name: Install Docker to the Slave node
+  hosts: SLAVE
+  become: yes
+  roles:
+    - role: install_docker
