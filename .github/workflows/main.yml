@@ -18,11 +18,8 @@ jobs:
       - uses: actions/checkout@v3
                  
       - run: |
-          sudo mkdir ${{ env.PROJECT_NAME }}
           sudo sed -i "s/${{ secrets.ADMIN_USER}}/{{ADMIN_USER}}/g" flask_env.py
           sudo sed -i "s/${{ secrets.ADMIN_PASSWORD}}/{{ADMIN_PASSWORD}}/g" flask_env.py
           sudo sed -i "s/${{ secrets.FLASK_PORT}}/{{FLASK_PORT}}/g" main.py
-          sudo cp main.py flask_env.py requirements.txt ${{ env.PROJECT_NAME }}
-          cd ${{ env.PROJECT_NAME }}
           sudo docker-compose up -d
           sudo docker ps
